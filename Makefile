@@ -10,7 +10,7 @@ export STOW_DIR := $(DOTFILES_DIR)
 
 all: $(OS)
 
-macos: sudo core-macos packages link python-big-sur
+macos: sudo core-macos packages link
 
 linux: core-linux link
 
@@ -48,7 +48,7 @@ unlink: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
-brew:
+brew: python-big-sur
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 bash: BASH=/usr/local/bin/bash
@@ -76,7 +76,6 @@ mas: brew
 
 python-big-sur:
 	echo "removing 2to3 in local bin"
-	pwd
 	rm -rf /usr/local/bin/2to3
 
 ruby: brew
