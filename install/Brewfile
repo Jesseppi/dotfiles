@@ -4,12 +4,12 @@ tap "homebrew/core"
 brew "fish"
 brew "coreutils"
 
+brew "python", restart_service: true, link:true, conflicts_with: ["python"]
 brew "dockutil"
 brew "grep"
 brew "jq"
 brew "mackup"
 brew "peco"
-brew "python", restart_service: true, link:true, conflicts_with: ["python"]
 brew "shellcheck"
 brew "ssh-copy-id"
 brew "stow"

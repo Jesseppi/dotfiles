@@ -72,7 +72,7 @@ git: brew
 	brew install git git-extras
 
 mas: brew
-	brew install mas-cli
+	brew install mas
 
 npm:
 	if ! [ -d $(NVM_DIR)/.git ]; then git clone https://github.com/creationix/nvm.git $(NVM_DIR); fi
