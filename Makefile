@@ -74,6 +74,10 @@ git: brew
 mas: brew
 	brew install mas
 
+pyhton-big-sur:
+	echo removing 2to3 in local bin
+	rm -rf /usr/local/bin/2to3
+
 npm:
 	if ! [ -d $(NVM_DIR)/.git ]; then git clone https://github.com/creationix/nvm.git $(NVM_DIR); fi
 	. $(NVM_DIR)/nvm.sh; nvm install --lts
