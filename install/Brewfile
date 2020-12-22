@@ -4,7 +4,6 @@ tap "homebrew/core"
 brew "fish"
 brew "coreutils"
 
-brew "python", restart_service: true, link:true, conflicts_with: ["python"]
 brew "dockutil"
 brew "grep"
 brew "jq"

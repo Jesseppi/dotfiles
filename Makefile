@@ -74,8 +74,9 @@ git: brew
 mas: brew
 	brew install mas
 
-pyhton-big-sur:
-	echo removing 2to3 in local bin
+pyhton-big-sur: echo
+	@echo "removing 2to3 in local bin"
+	pwd
 	rm -rf /usr/local/bin/2to3
 
 npm:

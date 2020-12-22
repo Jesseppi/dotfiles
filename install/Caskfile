@@ -3,7 +3,7 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-cask_args appdir: "~/Applications", require_sha: true
+cask_args appdir: "~/Applications"
 
 cask "dropbox"
 cask "firefox-developer-edition"
