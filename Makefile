@@ -78,6 +78,9 @@ npm:
 ruby: brew
 	brew install ruby
 
+remove 2to3:
+	rm -rf /usr/local/bin/2to3
+
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
