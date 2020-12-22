@@ -71,15 +71,15 @@ endif
 git: brew
 	brew install git git-extras
 
+mas: brew
+	brew install mas-cli
+
 npm:
 	if ! [ -d $(NVM_DIR)/.git ]; then git clone https://github.com/creationix/nvm.git $(NVM_DIR); fi
 	. $(NVM_DIR)/nvm.sh; nvm install --lts
 
 ruby: brew
 	brew install ruby
-
-remove 2to3:
-	rm -rf /usr/local/bin/2to3
 
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile

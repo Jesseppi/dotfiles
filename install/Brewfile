@@ -9,7 +9,7 @@ brew "grep"
 brew "jq"
 brew "mackup"
 brew "peco"
-brew "python"
+brew "python", restart_service: true, link:true, conflicts_with: ["python"]
 brew "shellcheck"
 brew "ssh-copy-id"
 brew "stow"
