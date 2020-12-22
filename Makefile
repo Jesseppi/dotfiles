@@ -48,7 +48,7 @@ unlink: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
-brew: python-big-sur
+brew: python-big-sur mas
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 bash: BASH=/usr/local/bin/bash
@@ -71,7 +71,7 @@ endif
 git: brew
 	brew install git git-extras
 
-mas: brew
+mas:
 	brew install mas
 
 python-big-sur:
