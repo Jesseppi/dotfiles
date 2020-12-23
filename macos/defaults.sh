@@ -33,9 +33,6 @@ sudo pmset -a standbydelay 900
 # Disable Sudden Motion Sensor
 sudo pmset -a sms 0
 
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
 # Menu bar: show battery percentage
 defaults write com.apple.menuextra.battery ShowPercent YES
 
