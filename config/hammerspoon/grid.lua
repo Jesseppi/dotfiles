@@ -1,7 +1,3 @@
-hs.grid.setGrid'3x3'
-hs.grid.setMargins("0,0")
-hs.window.animationDuration = 0
-
 function getWin()
   return hs.window.focusedWindow()
 end
@@ -15,7 +11,7 @@ function getScreen(window)
 end
 
 function snapTo(direction)
-  local win = getWith()
+  local win = getWin()
   local frame = getFrame(win)
   local screen = getScreen(win)
   local max = screen:frame()
@@ -33,7 +29,6 @@ function snapTo(direction)
 
   win:setFrame(frame)
 end
-
 
 --- arrows: move window
 hs.hotkey.bind(window, "left", snapTo("left"))
