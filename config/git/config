@@ -10,9 +10,17 @@
 	filemode = false
 	trustctime = false
 	autocrlf = input
-	untrackedCache = true
+
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	ignorecase = false
+
+	# Make `git rebase` safer on macOS.
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
 
 [credential]
 	helper = osxkeychain
@@ -31,18 +39,43 @@
 	prune = true
 
 [alias]
+
+	# List aliases.
+	aliases = config --get-regexp alias
+
+	# Show the user email for the current repository.
+	whoami = config user.email
+
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d'
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	# hide a file from git without adding to ignore
 	hideFromGit = update-index --assume-unchanged
+
+	#reveal a file that has been hidden from git
 	revealToGit = update-index --no-assume-unchanged
+
+	# shorthand push
 	p = push -u origin
-	newpush = !git checkout -b $1 && git push -u origin
+
+	# shorthand force push
+	fp = push -f
+
+	# create a branch and push it up to the origin remote
+	newpush = !git checkout -b $1 && git push -u origin HEAD
 	sts = !git remote update && git status
+
 	softy = reset --soft HEAD^
+
 	hardy = reset --hard HEAD
-	setLatestCommitAsItBuild = removeItTag && setNewItTag && pushNewItTag
+
+	# add staged changes into last commit with the same message
 	smash = !git commit --amend --reuse-message=HEAD
-	hulksmash = !git add -A && git commit --amend --no-edit && git push -f
+
+	# add everything, squash it into the last commit and force push it up to the remote
+	hulksmash = !git add -A && git smash && git push -f
+
+	# shorthand for status
 	stat = status
 
 [pull]
