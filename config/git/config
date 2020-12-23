@@ -46,7 +46,6 @@
 	hulksmash = !git add -A && git commit --amend --no-edit && git push -f
 	stat = status
 
-
 [color]
 	ui = auto
 [color "branch"]
