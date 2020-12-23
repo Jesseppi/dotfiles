@@ -1,3 +1,4 @@
+window = {"⌘", "⌥"}
 mash = {"⌘", "⌥", "⌃"}
 
 require "apps"

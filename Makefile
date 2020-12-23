@@ -48,7 +48,7 @@ unlink: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then \
 		mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
-brew: python-big-sur mas
+brew: python-big-sur
 	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
 
 bash: BASH=/usr/local/bin/bash
@@ -81,7 +81,7 @@ python-big-sur:
 ruby: brew
 	brew install ruby
 
-brew-packages: brew
+brew-packages: brew mas
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
 cask-apps: brew
