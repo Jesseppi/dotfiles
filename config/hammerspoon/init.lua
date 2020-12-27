@@ -1,4 +1,3 @@
-window = {"⌘", "⌥"}
 mash = {"⌘", "⌥", "⌃"}
 
 require "grid"
