@@ -83,9 +83,11 @@ ruby: brew
 
 brew-packages: brew mas
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
-	ifndef GITHUB_ACTION
-		brew bundle --file=$(DOTFILES_DIR)/install/Masfile
-	endif
+	
+  
+ifndef GITHUB_ACTION
+	brew bundle --file=$(DOTFILES_DIR)/install/Masfile
+endif
 
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
