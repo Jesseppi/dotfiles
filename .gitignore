@@ -1,1 +1,11 @@
 system/.custom
+
+.DS_Store
+
+install/Brewfile.lock.json
+
+install/Caskfile.lock.json
+
+install/Masfile.lock.json
+
+yarn.lock
